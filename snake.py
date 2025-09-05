@@ -62,7 +62,7 @@ def next_turn(snake, food):
 
             score += 1
 
-            label.config(text="Score:{}".format(score))
+            label.config(text="Score lu :{}".format(score))
 
             canvas.delete("food")
 
@@ -98,10 +98,10 @@ def check_collisions(snake):
       x, y = snake.coordinates[0]
 
       if x < 0 or x > GAME_WIDTH:
-            print("LU MATI KOCAK")
+            print("😂")
             return True
       elif y < 0 or y > GAME_HEIGHT:
-            print("LU MATI KOCAK")
+            print("🤣")
             return True
       
 
@@ -121,7 +121,7 @@ def restart_game():
       food - Food()
       score = 0
       direction = 'down'
-      label.config(text="Score:{}".format(score))
+      label.config(text="Score lu :{}".format(score))
       
       restart_button = Button(window, text="Ulang?", command=restart_game, font=('FiraCode Nerd font'))
       restart_button.place(x=0, y=0)
@@ -151,6 +151,7 @@ y = int((screen_height/2) - (window_height/2))
 
 window.geometry(f"{window_width}x{window_height}+{x}+{y}")
 
+# * key binding kukira pake up,down,left,right ternyata pake wasd
 canvas.focus_set()
 window.bind('<a>', lambda event: change_direction('left'))
 window.bind('<a>', lambda event: change_direction('left'))
